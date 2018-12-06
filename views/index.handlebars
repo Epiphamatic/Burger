@@ -1,19 +1,17 @@
 <div class="container bg">
 	
 	<div class="row">
-	    <div class="center col-sm-12">
-			<img src="assets/img/burger.png" alt="Eat-Da-Burger App">
-	        <h1>Eat-Da-Burger App</h1>
-	        <p></p>
+	    <div class="center col-sm-12 burgerDiv">
+			<img src="assets/img/burger.gif" alt="Eat-Da-Burger App" class="burgerImg">
+	        <div class="header">Eat-Da-Burger App</div>
 	    </div>
   	</div>
-	<!-- end .row -->
 
 	<div class="row">
 	    <div class="col-sm-6">
 
 			<br>
-			<div class="heading">Burgers Available To Eat!</div>
+			<div class="heading">Burgers to Consume:</div>
 
 			<ul>
 			  {{#each burgers}}
@@ -24,7 +22,7 @@
 
 			        <form action="/{{this.id}}?_method=PUT" method="POST">
 			          <input type="hidden" name="devoured" value="true">
-			          <button class="btn-primary" type="submit">Devour It!</button>
+			          <button class="btn btn-danger" type="submit">Devour It!</button>
 			        </form>
 
 			      </li>
@@ -36,7 +34,7 @@
 
 	    <div class="col-sm-6">
 
-			<div class="heading">Burgers That Have Been Eaten!</div>
+			<div class="heading">Burgers That Have Been Eaten:</div>
 			
 			  {{#each burgers}}
 			    {{#if this.devoured}}
@@ -54,18 +52,23 @@
 	<!-- end .row -->
 
 	<div class="row">
-	    <div class="center col-sm-12">
+		
+	    <div class="col-lg-12">
 
 			<div class="heading">Add A Burger!</div>
 
 			<form class="create-update-form" action="/" method="POST">
 
-			  <div class="form-group">
+			  <div class="form-group submitOrder">
+
 			    <p>Enter a burger you want to order and click the Submit Order button.</p>
+
 			    <input type="text" id="ca" name="burger_name">
+
 			  </div>
 			  
-			  <button class="btn-primary" type="submit">Submit Order</button>
+			  <button class="btn btn-danger submitOrderBtn" type="submit">Submit Order</button>
+
 			</form>
 
 	    </div>
